@@ -5,17 +5,15 @@ const init = () => {
 
     const data = {
         api: API_KEY,
-        delay: 2000,
-        lastUpdate: 0,
+        delay: 1000,
     }
-
-    let prev_val = "";
-    setInterval(()=>{
-        const val =  document.querySelector(".city-input").value;
-        if(val==prev_val)return;
-        prev_val = val;
-        getDataFromApi(data, val);
-    }, data.delay);
+    let timeout = null;
+    document.querySelector(".city-input").addEventListener("input", (e)=>{
+        if(timeout)clearTimeout(timeout);
+        timeout = setTimeout(()=>{
+            getDataFromApi(data, e.target.value);
+        }, data.delay);
+    })
 }
 
 const kelvinToCelc = (temp) => {
