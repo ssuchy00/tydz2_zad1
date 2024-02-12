@@ -1,0 +1,26 @@
+body
+{
+    background-color: rgb(16, 16, 16);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #fff;
+}
+
+ 
+
+input[type=text]
+{
+    width: 500px;
+    height: 30px;
+}
+
+span
+{
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 10px;
+}
